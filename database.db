@@ -1,0 +1,443 @@
+use microservicioClEps
+
+db.createCollection('acudiente')
+db.createCollection('cita')
+db.createCollection('consultorio')
+db.createCollection('especialidad')
+db.createCollection('estado_cita')
+db.createCollection('genero')
+db.createCollection('medico')
+db.createCollection('tipo_documento')
+db.createCollection('usuario')
+
+db.acudiente.insertMany(
+    [
+        {
+            "nombreCompleto": "Juan Pérez",
+            "telefono": "300-123-4567",
+            "direccion": "Calle 123 #45-67, Bogotá"
+        },
+        {
+            "nombreCompleto": "María Gómez",
+            "telefono": "310-987-6543",
+            "direccion": "Carrera 56 #78-90, Medellín"
+        },
+        {
+            "nombreCompleto": "Luis Rodríguez",
+            "telefono": "320-234-5678",
+            "direccion": "Avenida 34 #12-34, Cali"
+        },
+        {
+            "nombreCompleto": "Ana López",
+            "telefono": "350-876-5432",
+            "direccion": "Calle 78 #56-12, Barranquilla"
+        },
+        {
+            "nombreCompleto": "Pedro Ramírez",
+            "telefono": "360-765-4321",
+            "direccion": "Carrera 23 #45-67, Cartagena"
+        },
+        {
+            "nombreCompleto": "Laura Martínez",
+            "telefono": "370-654-3210",
+            "direccion": "Calle 56 #90-12, Bucaramanga"
+        },
+        {
+            "nombreCompleto": "Carlos González",
+            "telefono": "380-543-2109",
+            "direccion": "Carrera 12 #34-56, Pereira"
+        },
+        {
+            "nombreCompleto": "Sofía Castro",
+            "telefono": "390-432-1098",
+            "direccion": "Avenida 67 #45-23, Santa Marta"
+        },
+        {
+            "nombreCompleto": "Eduardo Herrera",
+            "telefono": "320-210-9876",
+            "direccion": "Calle 90 #23-45, Villavicencio"
+        },
+        {
+            "nombreCompleto": "Isabel Torres",
+            "telefono": "310-109-8765",
+            "direccion": "Carrera 45 #67-89, Manizales"
+        }]
+)
+
+
+db.cita.insertMany(
+    [
+        {
+            "fecha": {
+                "$date": "2023-09-15T00:00:00.000Z"
+            },
+            "estadoCita": {
+                "$oid": "650335b110ccabbb22786402"
+            },
+            "medico": {
+                "$oid": "65033d9e10ccabbb22786425"
+            },
+            "datosUsuario": {
+                "$oid": "650338df10ccabbb22786407"
+            }
+        },
+        {
+            "fecha": {
+                "$date": "2023-09-16T00:00:00.000Z"
+            },
+            "estadoCita": {
+                "$oid": "650335b110ccabbb22786403"
+            },
+            "medico": {
+                "$oid": "65033d9e10ccabbb22786426"
+            },
+            "datosUsuario": {
+                "$oid": "65033ae210ccabbb22786408"
+            }
+        },
+        {
+            "fecha": {
+                "$date": "2023-09-17T00:00:00.000Z"
+            },
+            "estadoCita": {
+                "$oid": "650335b110ccabbb22786404"
+            },
+            "medico": {
+                "$oid": "65033d9e10ccabbb22786427"
+            },
+            "datosUsuario": {
+                "$oid": "65033ae210ccabbb22786409"
+            }
+        },
+        {
+            "fecha": {
+                "$date": "2023-09-18T00:00:00.000Z"
+            },
+            "estadoCita": {
+                "$oid": "650335b110ccabbb22786405"
+            },
+            "medico": {
+                "$oid": "65033d9e10ccabbb22786428"
+            },
+            "datosUsuario": {
+                "$oid": "65033ae210ccabbb2278640a"
+            }
+        },
+        {
+            "fecha": {
+                "$date": "2023-09-19T00:00:00.000Z"
+            },
+            "estadoCita": {
+                "$oid": "650335b110ccabbb22786406"
+            },
+            "medico": {
+                "$oid": "65033d9e10ccabbb22786429"
+            },
+            "datosUsuario": {
+                "$oid": "65033ae210ccabbb2278640b"
+            }
+        },
+        {
+            "fecha": {
+                "$date": "2023-09-20T00:00:00.000Z"
+            },
+            "estadoCita": {
+                "$oid": "650335b110ccabbb22786402"
+            },
+            "medico": {
+                "$oid": "65033d9e10ccabbb2278642a"
+            },
+            "datosUsuario": {
+                "$oid": "65033ae210ccabbb2278640c"
+            }
+        },
+        {
+            "fecha": {
+                "$date": "2023-09-21T00:00:00.000Z"
+            },
+            "estadoCita": {
+                "$oid": "650335b110ccabbb22786403"
+            },
+            "medico": {
+                "$oid": "65033d9e10ccabbb2278642b"
+            },
+            "datosUsuario": {
+                "$oid": "65033b2710ccabbb2278640d"
+            }
+        },
+        {
+            "fecha": {
+                "$date": "2023-09-22T00:00:00.000Z"
+            },
+            "estadoCita": {
+                "$oid": "650335b110ccabbb22786404"
+            },
+            "medico": {
+                "$oid": "65033d9e10ccabbb2278642c"
+            },
+            "datosUsuario": {
+                "$oid": "65033b2710ccabbb2278640e"
+            }
+        },
+        {
+            "fecha": {
+                "$date": "2023-09-23T00:00:00.000Z"
+            },
+            "estadoCita": {
+                "$oid": "650335b110ccabbb22786405"
+            },
+            "medico": {
+                "$oid": "65033d9e10ccabbb2278642d"
+            },
+            "datosUsuario": {
+                "$oid": "65033b2710ccabbb2278640f"
+            }
+        },
+        {
+            "fecha": {
+                "$date": "2023-09-24T00:00:00.000Z"
+            },
+            "estadoCita": {
+                "$oid": "650335b110ccabbb22786406"
+            },
+            "medico": {
+                "$oid": "65033d9e10ccabbb2278642e"
+            },
+            "datosUsuario": {
+                "$oid": "65033b2710ccabbb22786410"
+            }
+        }
+    ]
+)
+
+
+db.consultorio.insertMany([
+    { "nombre": "Consultorio Médico ABC" },
+    { "nombre": "Consultorio del Dr. García" },
+    { "nombre": "Clínica Salud y Bienestar" },
+    { "nombre": "Consultorio de Especialidades Médicas" },
+    { "nombre": "Centro Médico San José" },
+    { "nombre": "Consultorio Médico Familiar" },
+    { "nombre": "Centro de Salud Integral" },
+    { "nombre": "Consultorio Pediátrico Pequeños Campeones" },
+    { "nombre": "Clínica de Ginecología y Obstetricia" },
+    { "nombre": "Consultorio de Dermatología Estética" }
+]
+)
+
+
+db.especialidad.insertMany([
+    { "nombre": "Cardiología" },
+    { "nombre": "Dermatología" },
+    { "nombre": "Gastroenterología" },
+    { "nombre": "Neurología" },
+    { "nombre": "Oftalmología" },
+    { "nombre": "Ortopedia" },
+    { "nombre": "Pediatría" },
+    { "nombre": "Psiquiatría" },
+    { "nombre": "Radiología" },
+    { "nombre": "Urología" }
+]
+)
+
+db.estado_cita.insertMany(
+    [
+        {"nombre":"Programada"},
+        {"nombre":"Confirmada"},
+        {"nombre":"En Curso"},
+        {"nombre":"Atendida"},
+        {"nombre":"Cancelada"},
+    ]
+)
+
+db.genero.insertMany(
+    [
+    { "genero": "Masculino", "abreviatura": "M" },
+    { "genero": "Femenino", "abreviatura": "F" },
+    { "genero": "No Binario", "abreviatura": "NB" },
+    { "genero": "Otro", "abreviatura": "O" }
+    ]
+)
+
+
+db.medico.insertMany([
+    {
+        "nombreCompleto": "Dr. Juan Pérez",
+        "consultorio": ObjectId("65033c3010ccabbb2278641b"),
+        "especialidad": ObjectId("65033bc510ccabbb22786411")
+    },
+    {
+        "nombreCompleto": "Dra. María González",
+        "consultorio": ObjectId("65033c3010ccabbb2278641c"),
+        "especialidad": ObjectId("65033bc510ccabbb22786412")
+    },
+    {
+        "nombreCompleto": "Dr. Luis Rodríguez",
+        "consultorio": ObjectId("65033c3010ccabbb2278641d"),
+        "especialidad": ObjectId("65033bc510ccabbb22786413")
+    },
+    {
+        "nombreCompleto": "Dra. Ana López",
+        "consultorio": ObjectId("65033c3010ccabbb2278641e"),
+        "especialidad": ObjectId("65033bc510ccabbb22786414")
+    },
+    {
+        "nombreCompleto": "Dr. Pedro Ramírez",
+        "consultorio": ObjectId("65033c3010ccabbb2278641f"),
+        "especialidad": ObjectId("65033bc510ccabbb22786415")
+    },
+    {
+        "nombreCompleto": "Dra. Laura Martínez",
+        "consultorio": ObjectId("65033c3010ccabbb22786420"),
+        "especialidad": ObjectId("65033bc510ccabbb22786416")
+    },
+    {
+        "nombreCompleto": "Dr. Carlos González",
+        "consultorio": ObjectId("65033c3010ccabbb22786421"),
+        "especialidad": ObjectId("65033bc510ccabbb22786417")
+    },
+    {
+        "nombreCompleto": "Dra. Sofía Castro",
+        "consultorio": ObjectId("65033c3010ccabbb22786422"),
+        "especialidad": ObjectId("65033bc510ccabbb22786418")
+    },
+    {
+        "nombreCompleto": "Dr. Eduardo Herrera",
+        "consultorio": ObjectId("65033c3010ccabbb22786423"),
+        "especialidad": ObjectId("65033bc510ccabbb22786419")
+    },
+    {
+        "nombreCompleto": "Dra. Isabel Torres",
+        "consultorio": ObjectId("65033c3010ccabbb22786424"),
+        "especialidad": ObjectId("65033bc510ccabbb2278641a")
+    }
+]
+)
+
+
+db.tipo_documento.insertMany(
+    [
+    { "tipoDocumento": "Cédula de Ciudadanía", "abreviatura": "CC" },
+    { "tipoDocumento": "Tarjeta de Identidad", "abreviatura": "TI" },
+    { "tipoDocumento": "Cédula de Extranjería", "abreviatura": "CE" },
+    { "tipoDocumento": "Pasaporte", "abreviatura": "PAS" },
+    { "tipoDocumento": "NIT (Número de Identificación Tributaria)", "abreviatura": "NIT" },
+    { "tipoDocumento": "Registro Civil", "abreviatura": "RC" }
+    ]
+)
+
+
+db.usuario.insertMany(
+    [
+    {
+        "nombre": "Juan",
+        "segdoNombre": "Carlos",
+        "primerApellidoUsuar": "Gómez",
+        "segdoApellidoUsuar": "Pérez",
+        "telefono": "300-123-4567",
+        "direccion": "Calle 123 #45-67, Bogotá",
+        "email": "juan.carlos@gmail.com",
+        "tipodoc": ObjectId("6503318e10ccabbb227863e8"),
+        "genero": ObjectId("6503324510ccabbb227863f2"),
+        "acudiente": ObjectId("6503332010ccabbb227863f6")
+    },
+    {
+        "nombre": "María",
+        "segdoNombre": "Fernanda",
+        "primerApellidoUsuar": "López",
+        "segdoApellidoUsuar": "Gómez",
+        "telefono": "310-987-6543",
+        "direccion": "Carrera 56 #78-90, Medellín",
+        "email": "maria.fernanda@gmail.com",
+        "tipodoc": ObjectId("6503318e10ccabbb227863e9"),
+        "genero": ObjectId("6503324510ccabbb227863f3"),
+        "acudiente": ObjectId("6503332010ccabbb227863f7")
+    },
+    {
+        "nombre": "Luis",
+        "segdoNombre": "Andrés",
+        "primerApellidoUsuar": "Rodríguez",
+        "segdoApellidoUsuar": "López",
+        "telefono": "320-234-5678",
+        "direccion": "Avenida 34 #12-34, Cali",
+        "email": "luis.andres@gmail.com",
+        "tipodoc": ObjectId("6503318e10ccabbb227863ea"),
+        "genero": ObjectId("6503324510ccabbb227863f2"),
+        "acudiente": ObjectId("6503332010ccabbb227863f8")
+    },
+    {
+        "nombre": "Ana",
+        "segdoNombre": "María",
+        "primerApellidoUsuar": "López",
+        "segdoApellidoUsuar": "Ramírez",
+        "telefono": "350-876-5432",
+        "direccion": "Calle 78 #56-12, Barranquilla",
+        "email": "ana.maria@gmail.com",
+        "tipodoc": ObjectId("6503318e10ccabbb227863eb"),
+        "genero": ObjectId("6503324510ccabbb227863f3"),
+        "acudiente": ObjectId("6503332010ccabbb227863f9")
+    },
+    {
+        "nombre": "Pedro",
+        "segdoNombre": "José",
+        "primerApellidoUsuar": "Ramírez",
+        "segdoApellidoUsuar": "Gómez",
+        "telefono": "360-765-4321",
+        "direccion": "Carrera 23 #45-67, Cartagena",
+        "email": "pedro.jose@gmail.com",
+        "tipodoc": ObjectId("6503318e10ccabbb227863ed"),
+        "genero": ObjectId("6503324510ccabbb227863f2"),
+        "acudiente": ObjectId("6503332010ccabbb227863fa")
+    },
+    {
+        "nombre": "Andrea",
+        "segdoNombre": "Isabel",
+        "primerApellidoUsuar": "Martínez",
+        "segdoApellidoUsuar": "López",
+        "telefono": "370-654-3210",
+        "direccion": "Calle 56 #90-12, Bucaramanga",
+        "email": "andrea.isabel@gmail.com",
+        "tipodoc": ObjectId("6503318e10ccabbb227863ec"),
+        "genero": ObjectId("6503324510ccabbb227863f3"),
+        "acudiente": ObjectId("6503332010ccabbb227863fb")
+    },
+    {
+        "nombre": "Carlos",
+        "segdoNombre": "Andrés",
+        "primerApellidoUsuar": "González",
+        "segdoApellidoUsuar": "Rodríguez",
+        "telefono": "380-543-2109",
+        "direccion": "Carrera 12 #34-56, Pereira",
+        "email": "carlos.andres@gmail.com",
+        "tipodoc": ObjectId("6503318e10ccabbb227863ea"),
+        "genero": ObjectId("6503324510ccabbb227863f2"),
+        "acudiente": ObjectId("6503332010ccabbb227863fc")
+    },
+    {
+        "nombre": "Sofía",
+        "segdoNombre": "Alejandra",
+        "primerApellidoUsuar": "Castro",
+        "segdoApellidoUsuar": "Martínez",
+        "telefono": "390-432-1098",
+        "direccion": "Avenida 67 #45-23, Santa Marta",
+        "email": "sofia.alejandra@gmail.com",
+        "tipodoc": ObjectId("6503318e10ccabbb227863eb"),
+        "genero": ObjectId("6503324510ccabbb227863f4"),
+        "acudiente": ObjectId("6503332010ccabbb227863fd")
+    },
+    {
+        "nombre": "Eduardo",
+        "segdoNombre": "Antonio",
+        "primerApellidoUsuar": "Herrera",
+        "segdoApellidoUsuar": "Gómez",
+        "telefono": "320-210-9876",
+        "direccion": "Calle 90 #23-45, Villavicencio",
+        "email": "eduardo.antonio@gmail.com",
+        "tipodoc": ObjectId("6503318e10ccabbb227863e9"),
+        "genero": ObjectId("6503324510ccabbb227863f5"),
+        "acudiente": ObjectId("6503332010ccabbb227863fe")
+    }
+]
+)
+
+
